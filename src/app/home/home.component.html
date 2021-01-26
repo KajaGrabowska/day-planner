@@ -1,0 +1,195 @@
+<br>
+<br>
+<br>
+<h3 class="text-center">{{ date | date:'fullDate'}}</h3>
+<br>
+<br>
+<!-- <app-task-list></app-task-list> -->
+<form>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <label for="new-task" class="form-label">Enter new task:</label>
+                <input class="form-control" type="text">
+            </div>
+            <div class="col-2">
+                <label for="categories" class="form-label">Choose a category:</label>
+                <select class="form-select" name="categories" id="categories">
+                    <option value="chores">Chores</option>
+                    <option value="work">Work</option>
+                    <option value="exercise">Exercise</option>
+                    <option value="errands">Errands</option>
+                    <option value="urgent" style="color: red;">Urgent</option>
+                </select>                                
+            </div>
+            <div class="col-2">
+                <label for="time-slots" class="form-label">Pick a time:</label>
+                <select class="form-select" name="time-slots" id="time-slots">
+                    <option *ngFor="let timeSlot of timeSlots">{{ timeSlot }}</option>
+                    
+                </select>                                
+            </div>
+        </div>
+    </div>
+    <br>
+    <div style="text-align: center;">
+        <button id="new-task" type="button" class="btn btn-dark">Add Task</button>
+    </div>
+</form>
+<br>
+<br>
+
+<h3 class="text-center">Day's progress</h3>
+<div class="container progress text-center">
+    <div class="progress-bar bg-info" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+        aria-valuemax="100">2/5</div>
+</div>
+
+<br>
+<br>
+
+<div class="container-sm" class="form-check" class="row justify-content-center">
+    <table class="table table-sm table-striped" style="width: 450pt;">
+        <col style="width:3%">
+	    <col style="width:15%">
+	    <col style="width:2%">
+        <tbody>
+            <tr>
+                <th scope="row">6AM</th>
+                <td><input class="form-check-input" type="checkbox" value="" id="6AM">Wake up</td>
+                <td><button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">7AM</th>
+                <td><input class="form-check-input" type="checkbox" value="" id="7AM">Eat breakfast</td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">8AM</th>
+                <td><input class="form-check-input" type="checkbox" value="" id="8AM">Shower</td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">9AM</th>
+                <td><input class="form-check-input" type="checkbox" value="" id="9AM"></td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">10AM</th>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">11AM</th>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">12PM</th>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">1PM</th>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">2PM</th>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">3PM</th>
+                <td>Meeting with Jenna</td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">4PM</th>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">5PM</th>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">6PM</th>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">7PM</th>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">8PM</th>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">9PM</th>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">10PM</th>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
