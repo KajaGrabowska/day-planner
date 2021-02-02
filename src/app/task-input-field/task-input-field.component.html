@@ -1,12 +1,37 @@
-<div class="text-center">
-    <input type=text>
-    <label for="categories">Choose a category:</label>
-    <select name="categories" id="categories">
-        <option value="chores">Chores</option>
-        <option value="work">Work</option>
-        <option value="exercise">Exercise</option>
-        <option value="errands">Errands</option>
-        <option value="urgent" style="color: red;">Urgent</option>
-    </select>
-    <button>Add Task</button>
-</div>
+<form (ngSubmit)="onAddTask(form)" #form="ngForm">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <label for="new-task" class="form-label">Enter new task:</label>
+                <input
+                    type="text" 
+                    class="form-control" 
+                    id="name" 
+                    name="name"
+                    ngModel
+                    required
+                />
+            </div>
+            <div class="col-2">
+                <label for="categories" class="form-label">Choose a category:</label>
+                <select class="form-select" name="category" id="category"d ngModel required>
+                    <option value="chores">Chores</option>
+                    <option value="work">Work</option>
+                    <option value="exercise">Exercise</option>
+                    <option value="errands">Errands</option>
+                    <option value="urgent" style="color: red;">Urgent</option>
+                </select>                                
+            </div>
+            <div class="col-2">
+                <label for="time-slots" class="form-label">Pick a time:</label>
+                <select class="form-select" name="time" id="time" ngModel required>
+                    <option *ngFor="let timeSlot of timeSlots">{{ timeSlot }}</option>                    
+                </select>                                
+            </div>
+        </div>
+    </div>
+    <br>
+    <div style="text-align: center;">
+        <button id="new-task" type="submit" class="btn btn-dark" [disabled]="!form.valid">Add Task</button>
+    </div>
+</form>

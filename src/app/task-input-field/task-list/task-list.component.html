@@ -1,0 +1,150 @@
+<div class="container-sm" class="form-check" class="row justify-content-center">
+    <table class="table table-sm table-striped" style="width: 450pt;">
+        <col style="width:3%">
+	    <col style="width:15%">
+	    <col style="width:2%">
+        <tbody>
+            <tr>
+                <th scope="row">6AM</th>
+                <div *ngIf="tasks[0].time === '6AM'">
+                    <td>{{ tasks[0].category }}</td>
+                    <td><input class="form-check-input" type="checkbox" value="" id="6AM">{{ tasks[0].content }}</td>
+                </div>
+                <td><button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">7AM</th>
+                <div *ngIf="tasks[1].time === '7AM'">
+                    <td><input class="form-check-input" type="checkbox" value="" id="7AM">{{ tasks[1].content }}</td>
+                </div>  
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">8AM</th>
+                <td><input class="form-check-input" type="checkbox" value="" id="8AM"></td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">9AM</th>
+                <td><input class="form-check-input" type="checkbox" value="" id="9AM"></td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">10AM</th>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">11AM</th>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">12PM</th>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">1PM</th>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">2PM</th>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">3PM</th>
+                <td>Meeting with Jenna</td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">4PM</th>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">5PM</th>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">6PM</th>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">7PM</th>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">8PM</th>
+                <td > {{ tasks[2].content }}</td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">9PM</th>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">10PM</th>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

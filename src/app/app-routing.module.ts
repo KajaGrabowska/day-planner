@@ -6,9 +6,7 @@ import { CompletedTasksComponent } from "./completed-tasks/completed-tasks.compo
 import { ContactUsComponent } from "./contact-us/contact-us.component";
 import { HomeComponent } from "./home/home.component";
 import { QuoteArchiveComponent } from "./quote-archive/quote-archive.component";
-import { TaskInputFieldComponent } from "./task-input-field/task-input-field.component";
-import { TaskListComponent } from "./task-list/task-list.component";
-import { TaskProgressComponent } from "./task-progress/task-progress.component";
+
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/day-planner', pathMatch: 'full' },
