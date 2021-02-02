@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { TasksService } from 'src/app/tasks.service';
 import { Task } from '../../task.model';
 
 @Component({
@@ -8,20 +9,18 @@ import { Task } from '../../task.model';
 })
 export class TaskListComponent implements OnInit {
   //@Input() fromParent: Task[];
-  tasks: Task[] = [
-    new Task('laundry', 'chores', '6AM'),
-    new Task('Walk the dog', 'errands', '8AM'),
-    new Task('Make dinner', 'chores', '8PM')
-  ];
-
-
+  tasks: Task[] = [];
 
   
+   
 
-  constructor() { }
+  constructor(private tasksService: TasksService ) { }
 
-  ngOnInit(): void {   
+  ngOnInit(): void {
+    this.tasks = this.tasksService.getTasks();
   }
+
+
   
   /* ngOnChanges() { // this will be called automatically when updated by parent.
       console.log(this.fromParent);

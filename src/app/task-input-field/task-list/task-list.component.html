@@ -1,14 +1,16 @@
-<div class="container-sm" class="form-check" class="row justify-content-center">
+ <div class="container-sm" class="form-check" class="row justify-content-center">
     <table class="table table-sm table-striped" style="width: 450pt;">
         <col style="width:3%">
-	    <col style="width:15%">
+        <col style="width: 5%;">
 	    <col style="width:2%">
         <tbody>
             <tr>
                 <th scope="row">6AM</th>
-                <div *ngIf="tasks[0].time === '6AM'">
-                    <td>{{ tasks[0].category }}</td>
-                    <td><input class="form-check-input" type="checkbox" value="" id="6AM">{{ tasks[0].content }}</td>
+                <div *ngFor="let task of tasks; let i=index">
+                    <div *ngIf="tasks[i].time === '6AM'">
+                        <td>{{ tasks[i].category }}</td>
+                        <td><input class="form-check-input" type="checkbox" value="" id="6"> {{ tasks[i].content }}</td>
+                    </div>
                 </div>
                 <td><button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
                     <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
@@ -16,9 +18,12 @@
             </tr>
             <tr>
                 <th scope="row">7AM</th>
-                <div *ngIf="tasks[1].time === '7AM'">
-                    <td><input class="form-check-input" type="checkbox" value="" id="7AM">{{ tasks[1].content }}</td>
-                </div>  
+                <div *ngFor="let task of tasks; let i=index">
+                    <div *ngIf="tasks[i].time === '7AM'">
+                        <td>{{ tasks[i].category }}</td>
+                        <td><input class="form-check-input" type="checkbox" value="" id="7">{{ tasks[i].content }}</td>
+                    </div> 
+                </div> 
                 <td>
                     <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
                     <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
@@ -26,15 +31,23 @@
             </tr>
             <tr>
                 <th scope="row">8AM</th>
-                <td><input class="form-check-input" type="checkbox" value="" id="8AM"></td>
-                <td>
+                <div *ngFor="let task of tasks; let i=index">
+                    <div *ngIf="tasks[i].time === '8AM'">
+                <td><input class="form-check-input" type="checkbox" value="" id="8AM">{{ tasks[i].content }}</td>
+                    </div>
+                </div>
+                <td>                        
                     <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
                     <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
                 </td>
             </tr>
             <tr>
                 <th scope="row">9AM</th>
-                <td><input class="form-check-input" type="checkbox" value="" id="9AM"></td>
+                <div *ngFor="let task of tasks; let i=index">
+                    <div *ngIf="tasks[i].time === '9AM'">
+                <td><input class="form-check-input" type="checkbox" value="" id="9AM">{{ tasks[i].content }}</td>
+                    </div>
+                </div>
                 <td>
                     <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
                     <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
@@ -42,7 +55,11 @@
             </tr>
             <tr>
                 <th scope="row">10AM</th>
-                <td></td>
+                <div *ngFor="let task of tasks; let i=index">
+                    <div *ngIf="tasks[i].time === '10AM'">
+                <td><input class="form-check-input" type="checkbox" value="" id="10AM">{{ tasks[i].content }}</td>
+                    </div>
+                </div>
                 <td>
                     <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
                     <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
@@ -50,7 +67,11 @@
             </tr>
             <tr>
                 <th scope="row">11AM</th>
-                <td></td>
+                <div *ngFor="let task of tasks; let i=index">
+                    <div *ngIf="tasks[i].time === '11AM'">
+                <td><input class="form-check-input" type="checkbox" value="" id="11AM">{{ tasks[i].content }}</td>
+                    </div>
+                </div>
                 <td>
                     <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
                     <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
@@ -58,7 +79,11 @@
             </tr>
             <tr>
                 <th scope="row">12PM</th>
-                <td></td>
+                <div *ngFor="let task of tasks; let i=index">
+                    <div *ngIf="tasks[i].time === '12PM'">
+                <td><input class="form-check-input" type="checkbox" value="" id="12PM">{{ tasks[i].content }}</td>
+                    </div>
+                </div>
                 <td>
                     <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
                     <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
@@ -66,7 +91,11 @@
             </tr>
             <tr>
                 <th scope="row">1PM</th>
-                <td></td>
+                <div *ngFor="let task of tasks; let i=index">
+                    <div *ngIf="tasks[i].time === '1PM'">
+                <td><input class="form-check-input" type="checkbox" value="" id="1PM">{{ tasks[i].content }}</td>
+                    </div>
+                </div>
                 <td>
                     <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
                     <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
@@ -74,7 +103,11 @@
             </tr>
             <tr>
                 <th scope="row">2PM</th>
-                <td></td>
+                <div *ngFor="let task of tasks; let i=index">
+                    <div *ngIf="tasks[i].time === '2PM'">
+                <td><input class="form-check-input" type="checkbox" value="" id="2PM">{{ tasks[i].content }}</td>
+                    </div>
+                </div>
                 <td>
                     <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
                     <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
@@ -82,7 +115,11 @@
             </tr>
             <tr>
                 <th scope="row">3PM</th>
-                <td>Meeting with Jenna</td>
+                <div *ngFor="let task of tasks; let i=index">
+                    <div *ngIf="tasks[i].time === '3PM'">
+                <td><input class="form-check-input" type="checkbox" value="" id="3PM">{{ tasks[i].content }}</td>
+                    </div>
+                </div>
                 <td>
                     <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
                     <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
@@ -90,7 +127,11 @@
             </tr>
             <tr>
                 <th scope="row">4PM</th>
-                <td></td>
+                <div *ngFor="let task of tasks; let i=index">
+                    <div *ngIf="tasks[i].time === '4PM'">
+                <td><input class="form-check-input" type="checkbox" value="" id="4PM">{{ tasks[i].content }}</td>
+                    </div>
+                </div>
                 <td>
                     <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
                     <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
@@ -98,7 +139,11 @@
             </tr>
             <tr>
                 <th scope="row">5PM</th>
-                <td></td>
+                <div *ngFor="let task of tasks; let i=index">
+                    <div *ngIf="tasks[i].time === '5PM'">
+                <td><input class="form-check-input" type="checkbox" value="" id="5PM">{{ tasks[i].content }}</td>
+                    </div>
+                </div>
                 <td>
                     <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
                     <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
@@ -106,7 +151,11 @@
             </tr>
             <tr>
                 <th scope="row">6PM</th>
-                <td></td>
+                <div *ngFor="let task of tasks; let i=index">
+                    <div *ngIf="tasks[i].time === '6PM'">
+                <td><input class="form-check-input" type="checkbox" value="" id="6PM">{{ tasks[i].content }}</td>
+                    </div>
+                </div>
                 <td>
                     <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
                     <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
@@ -114,7 +163,11 @@
             </tr>
             <tr>
                 <th scope="row">7PM</th>
-                <td></td>
+                <div *ngFor="let task of tasks; let i=index">
+                    <div *ngIf="tasks[i].time === '7PM'">
+                <td><input class="form-check-input" type="checkbox" value="" id="7PM">{{ tasks[i].content }}</td>
+                    </div>
+                </div>
                 <td>
                     <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
                     <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
@@ -122,7 +175,11 @@
             </tr>
             <tr>
                 <th scope="row">8PM</th>
-                <td > {{ tasks[2].content }}</td>
+                <div *ngFor="let task of tasks; let i=index">
+                    <div *ngIf="tasks[i].time === '8PM'">
+                <td><input class="form-check-input" type="checkbox" value="" id="8PM">{{ tasks[i].content }}</td>
+                    </div>
+                </div>
                 <td>
                     <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
                     <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
@@ -130,7 +187,11 @@
             </tr>
             <tr>
                 <th scope="row">9PM</th>
-                <td></td>
+                <div *ngFor="let task of tasks; let i=index">
+                    <div *ngIf="tasks[i].time === '9PM'">
+                <td><input class="form-check-input" type="checkbox" value="" id="9PM">{{ tasks[i].content }}</td>
+                    </div>
+                </div>
                 <td>
                     <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
                     <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
@@ -138,7 +199,11 @@
             </tr>
             <tr>
                 <th scope="row">10PM</th>
-                <td></td>
+                <div *ngFor="let task of tasks; let i=index">
+                    <div *ngIf="tasks[i].time === '10PM'">
+                <td><input class="form-check-input" type="checkbox" value="" id="10PM">{{ tasks[i].content }}</td>
+                    </div>
+                </div>
                 <td>
                     <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
                     <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
