@@ -1,1 +1,13 @@
-<p>quote-archive works!</p>
+<br>
+<br>
+<h1 class="text-center">Saved Quotes</h1>
+<br>
+<br>
+<ng-container *ngFor="let quote of quotes; let i=index">
+    <blockquote class="blockquote text-center">
+        <p class="mb-0">{{ quotes[i].content }}</p>
+        <br>
+        <footer class="blockquote-footer"><cite>{{ quotes[i].author }}</cite></footer>
+    </blockquote>
+    <br>
+</ng-container>

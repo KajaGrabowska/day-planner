@@ -6,10 +6,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quote-archive.component.css']
 })
 export class QuoteArchiveComponent implements OnInit {
+  quotes = [
+    {
+      "author": 'Malcolm X',
+      "content": "The future belongs to those who prepare for it today."
+    },
+    {
+      "author": 'Malcolm X',
+      "content": "The future belongs to those who prepare for it today."
+    },
+    {
+      "author": 'Malcolm X',
+      "content": "The future belongs to those who prepare for it today."
+    },
+    {
+      "author": 'Malcolm X',
+      "content": "The future belongs to those who prepare for it today."
+    }
+  ];
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
 
 }
