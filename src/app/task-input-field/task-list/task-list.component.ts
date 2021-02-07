@@ -5,19 +5,28 @@ import { Task } from '../../task.model';
 @Component({
   selector: 'app-task-list',
   templateUrl: './task-list.component.html',
-  styleUrls: ['./task-list.component.css']
+  styleUrls: ['./task-list.component.scss']
 })
 export class TaskListComponent implements OnInit {
   //@Input() fromParent: Task[];
   tasks: Task[] = [];
+  index: number;
 
   
    
 
   constructor(private tasksService: TasksService ) { }
 
-  ngOnInit(): void {
-    this.tasks = this.tasksService.getTasks();
+  ngOnInit() {
+    //this.tasks = this.tasksService.fetchTasks();
+  }
+
+  onCompleteTask(task: Task) {
+    this.tasksService.completeTask(task);
+  }
+
+  onDeleteTask() {
+    this.tasksService.deleteTask(this.index);
   }
 
 

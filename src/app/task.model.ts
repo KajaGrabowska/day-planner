@@ -6,7 +6,6 @@ export class Task {
     
 
     constructor(content: string, category: string, time: string) {
-        //this.id = id;
         this.content = content;
         this.category = category;
         this.time = time;
@@ -14,7 +13,7 @@ export class Task {
 
     }
 
-    /* setID() {
+   /*  setID() {
         if (this.time.length === 4) {
             let sliced = +this.time.slice(0, 1);
             this.id = sliced;
@@ -22,6 +21,6 @@ export class Task {
         if (this.time.length === 5 ) {
             let sliced = +this.time.slice(0, 2);
             this.id = sliced;
-        }   */  
-    //}
+        }
+    //} */
 }

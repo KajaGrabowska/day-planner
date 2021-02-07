@@ -2,12 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Task } from './task.model';
 import { map, tap } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TasksService {
   tasks: Task[] = [];
+  tasksChanged = new Subject<Task[]>();
+  finishedTasks: Task[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -21,6 +24,23 @@ export class TasksService {
 
   setTasks(tasks: Task[]) {
     this.tasks = tasks;
+  }
+
+  completeTask(task: Task) {
+    for (let i = 0; i < this.tasks.length; i++) {
+      if (this.tasks[i].time === task.time) {
+        this.finishedTasks.push(task);
+      }   
+    }    
+  }
+
+  getCompletedTasks() {
+    return this.finishedTasks;
+  }
+
+  deleteTask(index: number) {
+    this.tasks.splice(index, 1);
+    this.tasksChanged.next(this.tasks.slice());
   }
 
   saveTasks() {
@@ -45,7 +65,8 @@ export class TasksService {
           });
         }),
         tap(tasks => {
-          this.setTasks(tasks);
+          // this.setTasks(tasks);
+          return tasks;
         })
       )
   }

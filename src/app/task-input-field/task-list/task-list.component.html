@@ -1,18 +1,21 @@
 <div class="container-sm" class="form-check" class="row justify-content-center">
     <!-- <table class="table table-sm table-striped table-bordered" -->
-    <table class="table table-sm table-striped table-bordered" style="table-layout: fixed; width: 50%;">
+    <table class="table table-sm table-striped" style="table-layout: fixed; width: 50%;">
+        <colgroup>
+            <col>
+            <col>
+            <col>
+        </colgroup>
         <thead>
             <tr>
-                <th style="width: 10%" style="text-align: center;">Time</th>
-                <th style="width: 15%" style="text-align: center;">Task Category</th>
-                <th style="width: 25%" style="text-align: center;">Task</th>
+                <th style="width: 10%" style="text-align: center;" scope="col">Time</th>
+                <th style="width: 15%" style="text-align: center;" scope="col">Task Category</th>
+                <th style="width: 25%" style="text-align: center;" scope="col">Task</th>
             </tr>
         </thead>
         <tbody>
-            <tr scope="rowg">
-                <th scope="col">6AM</th>
-                <!-- <div id="task" *ngFor="let task of tasks; let i=index"> -->
-                <!-- <div *ngIf="tasks[i].time === '6AM'"> -->
+            <tr>
+                <th scope="row">6AM</th>
                 <ng-container *ngFor="let task of tasks; let i=index">
                     <ng-container *ngIf="tasks[i].time === '6AM'; else elseBlock">
                         <td>{{ tasks[i].category }}</td>
@@ -20,13 +23,15 @@
                             <input 
                                 class="form-check-input" 
                                 type="checkbox" 
-                                value="" 
-                                id="6" 
-                                style="margin-right: 2px;"
+                                name="checkbox"
+                                style="margin-right: 5px;"         
                                 >{{ tasks[i].content }}
                             <button 
+                                style="margin-left: 20px" 
+                                id="delete" 
                                 type="button" 
                                 class="btn btn-danger btn-sm"
+                                (click)="onDeleteTask()"
                                 >Delete
                             </button>
                         </td>
@@ -36,237 +41,454 @@
                         </ng-template>
                     </ng-container>
                 </ng-container>
-                <!-- <td>
-                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
-                </td>                 -->
             </tr>
             <tr>
                 <th scope="row">7AM</th>
-                <div *ngFor="let task of tasks; let i=index">
-                    <div *ngIf="tasks[i].time === '7AM'">
-                        <td>{{ tasks[i].category }}</td>
-                        <td><input class="form-check-input" type="checkbox" value="" id="7">{{ tasks[i].content }}</td>
-                    </div>
-                </div>
-                <!-- <td>
-                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
-                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
-                </td> -->
-            </tr>
-            <tr>
-                <th scope="row">8AM</th>
-                <!-- <div id="task" *ngFor="let task of tasks; let i=index"> -->
-                <!-- <div *ngIf="tasks[i].time === '6AM'"> -->
                 <ng-container *ngFor="let task of tasks; let i=index">
-                    <div *ngIf="tasks[i].time === '8AM'; else elseBlock">
+                    <ng-container *ngIf="tasks[i].time === '7AM'; else elseBlock">
                         <td>{{ tasks[i].category }}</td>
                         <td>
-                            <input class="form-check-input" type="checkbox" value="" id="6" style="margin-right: 2px;">
-                            {{ tasks[i].content }}
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                name="checkbox"
+                                style="margin-right: 5px;"         
+                                >{{ tasks[i].content }}
+                            <button 
+                                style="margin-left: 20px" 
+                                id="delete" 
+                                type="button" 
+                                class="btn btn-danger btn-sm"
+                                (click)="onDeleteTask()"
+                                >Delete
+                            </button>
                         </td>
                         <ng-template #elseBlock>
                             <td></td>
                             <td></td>
                         </ng-template>
-                    </div>
+                    </ng-container>
                 </ng-container>
             </tr>
-            <!-- <tr>
+            <tr>
                 <th scope="row">8AM</th>
-                <div *ngFor="let task of tasks; let i=index">
-                    <div *ngIf="tasks[i].time === '8AM'">
-                <td><input class="form-check-input" type="checkbox" value="" id="8AM">{{ tasks[i].content }}</td>
-                    </div>
-                </div>
-                <td>                        
-                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
-                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
-                </td>
-            </tr> -->
+                <ng-container *ngFor="let task of tasks; let i=index">
+                    <ng-container *ngIf="tasks[i].time === '8AM'; else elseBlock">
+                        <td>{{ tasks[i].category }}</td>
+                        <td>
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                name="checkbox"
+                                style="margin-right: 5px;"         
+                                >{{ tasks[i].content }}
+                            <button 
+                                style="margin-left: 20px" 
+                                id="delete" 
+                                type="button" 
+                                class="btn btn-danger btn-sm"
+                                (click)="onDeleteTask()"
+                                >Delete
+                            </button>
+                        </td>
+                        <ng-template #elseBlock>
+                            <td></td>
+                            <td></td>
+                        </ng-template>
+                    </ng-container>
+                </ng-container>
+            </tr>
             <tr>
                 <th scope="row">9AM</th>
-                <div *ngFor="let task of tasks; let i=index">
-                    <div *ngIf="tasks[i].time === '9AM'">
-                        <td><input class="form-check-input" type="checkbox" value="" id="9AM">{{ tasks[i].content }}
+                <ng-container *ngFor="let task of tasks; let i=index">
+                    <ng-container *ngIf="tasks[i].time === '9AM'; else elseBlock">
+                        <td>{{ tasks[i].category }}</td>
+                        <td>
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                name="checkbox"
+                                style="margin-right: 5px;"         
+                                >{{ tasks[i].content }}
+                            <button 
+                                style="margin-left: 20px" 
+                                id="delete" 
+                                type="button" 
+                                class="btn btn-danger btn-sm"
+                                (click)="onDeleteTask()"
+                                >Delete
+                            </button>
                         </td>
-                    </div>
-                </div>
-                <!-- <td>
-                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
-                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
-                </td> -->
+                        <ng-template #elseBlock>
+                            <td></td>
+                            <td></td>
+                        </ng-template>
+                    </ng-container>
+                </ng-container>
             </tr>
             <tr>
                 <th scope="row">10AM</th>
-                <div *ngFor="let task of tasks; let i=index">
-                    <div *ngIf="tasks[i].time === '10AM'">
-                        <td><input class="form-check-input" type="checkbox" value="" id="10AM">{{ tasks[i].content }}
+                <ng-container *ngFor="let task of tasks; let i=index">
+                    <ng-container *ngIf="tasks[i].time === '10AM'; else elseBlock">
+                        <td>{{ tasks[i].category }}</td>
+                        <td>
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                name="checkbox"
+                                style="margin-right: 5px;"         
+                                >{{ tasks[i].content }}
+                            <button 
+                                style="margin-left: 20px" 
+                                id="delete" 
+                                type="button" 
+                                class="btn btn-danger btn-sm"
+                                (click)="onDeleteTask()"
+                                >Delete
+                            </button>
                         </td>
-                    </div>
-                </div>
-                <!-- <td>
-                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
-                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
-                </td> -->
+                        <ng-template #elseBlock>
+                            <td></td>
+                            <td></td>
+                        </ng-template>
+                    </ng-container>
+                </ng-container>
             </tr>
             <tr>
                 <th scope="row">11AM</th>
-                <div *ngFor="let task of tasks; let i=index">
-                    <div *ngIf="tasks[i].time === '11AM'">
-                        <td><input class="form-check-input" type="checkbox" value="" id="11AM">{{ tasks[i].content }}
+                <ng-container *ngFor="let task of tasks; let i=index">
+                    <ng-container *ngIf="tasks[i].time === '11AM'; else elseBlock">
+                        <td>{{ tasks[i].category }}</td>
+                        <td>
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                name="checkbox"
+                                style="margin-right: 5px;"         
+                                >{{ tasks[i].content }}
+                            <button 
+                                style="margin-left: 20px" 
+                                id="delete" 
+                                type="button" 
+                                class="btn btn-danger btn-sm"
+                                (click)="onDeleteTask()"
+                                >Delete
+                            </button>
                         </td>
-                    </div>
-                </div>
-                <!-- <td>
-                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
-                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
-                </td> -->
+                        <ng-template #elseBlock>
+                            <td></td>
+                            <td></td>
+                        </ng-template>
+                    </ng-container>
+                </ng-container>
             </tr>
             <tr>
                 <th scope="row">12PM</th>
-                <div *ngFor="let task of tasks; let i=index">
-                    <div *ngIf="tasks[i].time === '12PM'">
-                        <td><input class="form-check-input" type="checkbox" value="" id="12PM">{{ tasks[i].content }}
+                <ng-container *ngFor="let task of tasks; let i=index">
+                    <ng-container *ngIf="tasks[i].time === '12PM'; else elseBlock">
+                        <td>{{ tasks[i].category }}</td>
+                        <td>
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                name="checkbox"
+                                style="margin-right: 5px;"         
+                                >{{ tasks[i].content }}
+                            <button 
+                                style="margin-left: 20px" 
+                                id="delete" 
+                                type="button" 
+                                class="btn btn-danger btn-sm"
+                                (click)="onDeleteTask()"
+                                >Delete
+                            </button>
                         </td>
-                    </div>
-                </div>
-                <!-- <td>
-                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
-                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
-                </td> -->
+                        <ng-template #elseBlock>
+                            <td></td>
+                            <td></td>
+                        </ng-template>
+                    </ng-container>
+                </ng-container>
             </tr>
             <tr>
                 <th scope="row">1PM</th>
-                <div *ngFor="let task of tasks; let i=index">
-                    <div *ngIf="tasks[i].time === '1PM'">
-                        <td><input class="form-check-input" type="checkbox" value="" id="1PM">{{ tasks[i].content }}
+                <ng-container *ngFor="let task of tasks; let i=index">
+                    <ng-container *ngIf="tasks[i].time === '1PM'; else elseBlock">
+                        <td>{{ tasks[i].category }}</td>
+                        <td>
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                name="checkbox"
+                                style="margin-right: 5px;"         
+                                >{{ tasks[i].content }}
+                            <button 
+                                style="margin-left: 20px" 
+                                id="delete" 
+                                type="button" 
+                                class="btn btn-danger btn-sm"
+                                (click)="onDeleteTask()"
+                                >Delete
+                            </button>
                         </td>
-                    </div>
-                </div>
-                <!-- <td>
-                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
-                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
-                </td> -->
+                        <ng-template #elseBlock>
+                            <td></td>
+                            <td></td>
+                        </ng-template>
+                    </ng-container>
+                </ng-container>
             </tr>
             <tr>
                 <th scope="row">2PM</th>
-                <div *ngFor="let task of tasks; let i=index">
-                    <div *ngIf="tasks[i].time === '2PM'">
-                        <td><input class="form-check-input" type="checkbox" value="" id="2PM">{{ tasks[i].content }}
+                <ng-container *ngFor="let task of tasks; let i=index">
+                    <ng-container *ngIf="tasks[i].time === '2PM'; else elseBlock">
+                        <td>{{ tasks[i].category }}</td>
+                        <td>
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                name="checkbox"
+                                style="margin-right: 5px;"         
+                                >{{ tasks[i].content }}
+                            <button 
+                                style="margin-left: 20px" 
+                                id="delete" 
+                                type="button" 
+                                class="btn btn-danger btn-sm"
+                                (click)="onDeleteTask()"
+                                >Delete
+                            </button>
                         </td>
-                    </div>
-                </div>
-                <!-- <td>
-                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
-                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
-                </td> -->
+                        <ng-template #elseBlock>
+                            <td></td>
+                            <td></td>
+                        </ng-template>
+                    </ng-container>
+                </ng-container>
             </tr>
             <tr>
                 <th scope="row">3PM</th>
-                <div *ngFor="let task of tasks; let i=index">
-                    <div *ngIf="tasks[i].time === '3PM'">
-                        <td><input class="form-check-input" type="checkbox" value="" id="3PM">{{ tasks[i].content }}
+                <ng-container *ngFor="let task of tasks; let i=index">
+                    <ng-container *ngIf="tasks[i].time === '3PM'; else elseBlock">
+                        <td>{{ tasks[i].category }}</td>
+                        <td>
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                name="checkbox"
+                                style="margin-right: 5px;"         
+                                >{{ tasks[i].content }}
+                            <button 
+                                style="margin-left: 20px" 
+                                id="delete" 
+                                type="button" 
+                                class="btn btn-danger btn-sm"
+                                (click)="onDeleteTask()"
+                                >Delete
+                            </button>
                         </td>
-                    </div>
-                </div>
-                <!-- <td>
-                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
-                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
-                </td> -->
+                        <ng-template #elseBlock>
+                            <td></td>
+                            <td></td>
+                        </ng-template>
+                    </ng-container>
+                </ng-container>
             </tr>
             <tr>
                 <th scope="row">4PM</th>
-                <div *ngFor="let task of tasks; let i=index">
-                    <div *ngIf="tasks[i].time === '4PM'">
-                        <td><input class="form-check-input" type="checkbox" value="" id="4PM">{{ tasks[i].content }}
+                <ng-container *ngFor="let task of tasks; let i=index">
+                    <ng-container *ngIf="tasks[i].time === '4PM'; else elseBlock">
+                        <td>{{ tasks[i].category }}</td>
+                        <td>
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                name="checkbox"
+                                style="margin-right: 5px;"         
+                                >{{ tasks[i].content }}
+                            <button 
+                                style="margin-left: 20px" 
+                                id="delete" 
+                                type="button" 
+                                class="btn btn-danger btn-sm"
+                                (click)="onDeleteTask()"
+                                >Delete
+                            </button>
                         </td>
-                    </div>
-                </div>
-                <!-- <td>
-                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
-                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
-                </td> -->
+                        <ng-template #elseBlock>
+                            <td></td>
+                            <td></td>
+                        </ng-template>
+                    </ng-container>
+                </ng-container>
             </tr>
             <tr>
                 <th scope="row">5PM</th>
-                <div *ngFor="let task of tasks; let i=index">
-                    <div *ngIf="tasks[i].time === '5PM'">
-                        <td><input class="form-check-input" type="checkbox" value="" id="5PM">{{ tasks[i].content }}
+                <ng-container *ngFor="let task of tasks; let i=index">
+                    <ng-container *ngIf="tasks[i].time === '5PM'; else elseBlock">
+                        <td>{{ tasks[i].category }}</td>
+                        <td>
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                name="checkbox"
+                                style="margin-right: 5px;"         
+                                >{{ tasks[i].content }}
+                            <button 
+                                style="margin-left: 20px" 
+                                id="delete" 
+                                type="button" 
+                                class="btn btn-danger btn-sm"
+                                (click)="onDeleteTask()"
+                                >Delete
+                            </button>
                         </td>
-                    </div>
-                </div>
-                <!-- <td>
-                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
-                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
-                </td> -->
+                        <ng-template #elseBlock>
+                            <td></td>
+                            <td></td>
+                        </ng-template>
+                    </ng-container>
+                </ng-container>
             </tr>
             <tr>
                 <th scope="row">6PM</th>
-                <div *ngFor="let task of tasks; let i=index">
-                    <div *ngIf="tasks[i].time === '6PM'">
-                        <td><input class="form-check-input" type="checkbox" value="" id="6PM">{{ tasks[i].content }}
+                <ng-container *ngFor="let task of tasks; let i=index">
+                    <ng-container *ngIf="tasks[i].time === '6PM'; else elseBlock">
+                        <td>{{ tasks[i].category }}</td>
+                        <td>
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                name="checkbox"
+                                style="margin-right: 5px;"         
+                                >{{ tasks[i].content }}
+                            <button 
+                                style="margin-left: 20px" 
+                                id="delete" 
+                                type="button" 
+                                class="btn btn-danger btn-sm"
+                                (click)="onDeleteTask()"
+                                >Delete
+                            </button>
                         </td>
-                    </div>
-                </div>
-                <!-- <td>
-                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
-                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
-                </td> -->
+                        <ng-template #elseBlock>
+                            <td></td>
+                            <td></td>
+                        </ng-template>
+                    </ng-container>
+                </ng-container>
             </tr>
             <tr>
                 <th scope="row">7PM</th>
-                <div *ngFor="let task of tasks; let i=index">
-                    <div *ngIf="tasks[i].time === '7PM'">
-                        <td><input class="form-check-input" type="checkbox" value="" id="7PM">{{ tasks[i].content }}
+                <ng-container *ngFor="let task of tasks; let i=index">
+                    <ng-container *ngIf="tasks[i].time === '7PM'; else elseBlock">
+                        <td>{{ tasks[i].category }}</td>
+                        <td>
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                name="checkbox"
+                                style="margin-right: 5px;"         
+                                >{{ tasks[i].content }}
+                            <button 
+                                style="margin-left: 20px" 
+                                id="delete" 
+                                type="button" 
+                                class="btn btn-danger btn-sm"
+                                (click)="onDeleteTask()"
+                                >Delete
+                            </button>
                         </td>
-                    </div>
-                </div>
-                <!-- <td>
-                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
-                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
-                </td> -->
+                        <ng-template #elseBlock>
+                            <td></td>
+                            <td></td>
+                        </ng-template>
+                    </ng-container>
+                </ng-container>
             </tr>
             <tr>
                 <th scope="row">8PM</th>
-                <div *ngFor="let task of tasks; let i=index">
-                    <div *ngIf="tasks[i].time === '8PM'">
-                        <td><input class="form-check-input" type="checkbox" value="" id="8PM">{{ tasks[i].content }}
+                <ng-container *ngFor="let task of tasks; let i=index">
+                    <ng-container *ngIf="tasks[i].time === '8PM'; else elseBlock">
+                        <td>{{ tasks[i].category }}</td>
+                        <td>
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                name="checkbox"
+                                style="margin-right: 5px;"         
+                                >{{ tasks[i].content }}
+                            <button 
+                                style="margin-left: 20px" 
+                                id="delete" 
+                                type="button" 
+                                class="btn btn-danger btn-sm"
+                                (click)="onDeleteTask()"
+                                >Delete
+                            </button>
                         </td>
-                    </div>
-                </div>
-                <!-- <td>
-                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
-                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
-                </td> -->
+                        <ng-template #elseBlock>
+                            <td></td>
+                            <td></td>
+                        </ng-template>
+                    </ng-container>
+                </ng-container>
             </tr>
             <tr>
                 <th scope="row">9PM</th>
-                <div *ngFor="let task of tasks; let i=index">
-                    <div *ngIf="tasks[i].time === '9PM'">
-                        <td><input class="form-check-input" type="checkbox" value="" id="9PM">{{ tasks[i].content }}
+                <ng-container *ngFor="let task of tasks; let i=index">
+                    <ng-container *ngIf="tasks[i].time === '9PM'; else elseBlock">
+                        <td>{{ tasks[i].category }}</td>
+                        <td>
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                name="checkbox"
+                                style="margin-right: 5px;"         
+                                >{{ tasks[i].content }}
+                            <button 
+                                style="margin-left: 20px" 
+                                id="delete" 
+                                type="button" 
+                                class="btn btn-danger btn-sm"
+                                (click)="onDeleteTask()"
+                                >Delete
+                            </button>
                         </td>
-                    </div>
-                </div>
-                <!-- <td>
-                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
-                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
-                </td> -->
+                        <ng-template #elseBlock>
+                            <td></td>
+                            <td></td>
+                        </ng-template>
+                    </ng-container>
+                </ng-container>
             </tr>
             <tr>
                 <th scope="row">10PM</th>
-                <div *ngFor="let task of tasks; let i=index">
-                    <div *ngIf="tasks[i].time === '10PM'">
-                        <td><input class="form-check-input" type="checkbox" value="" id="10PM">{{ tasks[i].content }}
+                <ng-container *ngFor="let task of tasks; let i=index">
+                    <ng-container *ngIf="tasks[i].time === '10PM'; else elseBlock">
+                        <td>{{ tasks[i].category }}</td>
+                        <td>
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                name="checkbox"
+                                style="margin-right: 5px;"         
+                                >{{ tasks[i].content }}
+                            <button 
+                                style="margin-left: 20px" 
+                                id="delete" 
+                                type="button" 
+                                class="btn btn-danger btn-sm"
+                                (click)="onDeleteTask()"
+                                >Delete
+                            </button>
                         </td>
-                    </div>
-                </div>
-                <!-- <td>
-                    <button type="button" class="btn btn-outline-primary btn-sm">Edit</button>
-                    <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
-                </td> -->
+                        <ng-template #elseBlock>
+                            <td></td>
+                            <td></td>
+                        </ng-template>
+                    </ng-container>
+                </ng-container>
             </tr>
         </tbody>
     </table>

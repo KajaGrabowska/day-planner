@@ -6,7 +6,7 @@ import { TasksService } from '../tasks.service';
 @Component({
   selector: 'app-task-input-field',
   templateUrl: './task-input-field.component.html',
-  styleUrls: ['./task-input-field.component.css']
+  styleUrls: ['./task-input-field.component.scss']
 })
 export class TaskInputFieldComponent implements OnInit {
   timeSlots = ['6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12PM', '1PM', '2PM','3PM','4PM','5PM','6PM','7PM','8PM', '9PM','10PM'];
