@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TasksService } from 'src/app/tasks.service';
 import { Task } from '../../task.model';
+import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-task-list',
@@ -18,7 +20,7 @@ export class TaskListComponent implements OnInit {
   constructor(private tasksService: TasksService ) { }
 
   ngOnInit() {
-    //this.tasks = this.tasksService.fetchTasks();
+    this.tasks = this.tasksService.getTasks();
   }
 
   onCompleteTask(task: Task) {

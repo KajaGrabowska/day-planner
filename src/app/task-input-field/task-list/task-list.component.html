@@ -16,7 +16,7 @@
         <tbody>
             <tr>
                 <th scope="row">6AM</th>
-                <ng-container *ngFor="let task of tasks; let i=index">
+                <ng-container #index6AM *ngFor="let task of tasks; let i=index">
                     <ng-container *ngIf="tasks[i].time === '6AM'; else elseBlock">
                         <td>{{ tasks[i].category }}</td>
                         <td>
@@ -31,7 +31,7 @@
                                 id="delete" 
                                 type="button" 
                                 class="btn btn-danger btn-sm"
-                                (click)="onDeleteTask()"
+                                (click)="onDeleteTask(index6AM.value)"
                                 >Delete
                             </button>
                         </td>
@@ -44,7 +44,7 @@
             </tr>
             <tr>
                 <th scope="row">7AM</th>
-                <ng-container *ngFor="let task of tasks; let i=index">
+                <ng-container #index7AM *ngFor="let task of tasks; let i=index">
                     <ng-container *ngIf="tasks[i].time === '7AM'; else elseBlock">
                         <td>{{ tasks[i].category }}</td>
                         <td>
@@ -59,7 +59,7 @@
                                 id="delete" 
                                 type="button" 
                                 class="btn btn-danger btn-sm"
-                                (click)="onDeleteTask()"
+                                (click)="onDeleteTask(index7AM.value)"
                                 >Delete
                             </button>
                         </td>

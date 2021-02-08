@@ -1,11 +1,17 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FormsModule } from '@angular/forms';
+
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
         AppComponent
+      ],
+      imports: [
+        HttpClientTestingModule, FormsModule
       ],
     }).compileComponents();
   });
@@ -22,10 +28,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('day-planner');
   });
 
-  /* it('should render title', () => {
+  /* it('should render title in an h1 tag', waitForAsync(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.getElementById('title').textContent).toContain('Day Planner');
-  }); */
+    expect(compiled.querySelector('title').textContent).toContain('Day Planner');
+  })); */
 });
