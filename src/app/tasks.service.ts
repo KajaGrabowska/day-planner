@@ -3,9 +3,10 @@ import { Injectable } from '@angular/core';
 import { Task } from './task.model';
 import { map, tap } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { NgForm } from '@angular/forms';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'any'
 })
 export class TasksService {
   tasks: Task[] = [];
@@ -66,8 +67,7 @@ export class TasksService {
           });
         }),
         tap(tasks => {
-          // this.setTasks(tasks);
-          return tasks;
+          this.setTasks(tasks);
         })
       )
   }

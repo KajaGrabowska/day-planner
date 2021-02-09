@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+
 
 import { TaskInputFieldComponent } from './task-input-field.component';
+import { FormsModule } from '@angular/forms';
 
 describe('TaskInputFieldComponent', () => {
   let component: TaskInputFieldComponent;
@@ -8,7 +11,8 @@ describe('TaskInputFieldComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TaskInputFieldComponent ]
+      declarations: [ TaskInputFieldComponent ],
+      imports: [ HttpClientTestingModule, FormsModule ]
     })
     .compileComponents();
   });

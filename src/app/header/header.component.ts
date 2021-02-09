@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { QuoteAPIService } from '../quote-api.service';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +15,7 @@ export class HeaderComponent implements OnInit {
   url = 'https://api.quotable.io/random';
   quotes = [];
 
-    constructor(private http: HttpClient) { 
+    constructor(private http: HttpClient, private QuoteAPIService: QuoteAPIService) { 
       this.http.get(this.url).toPromise().then(data => {
         this.quotes.push(data);
         console.log(this.quotes);
@@ -28,6 +29,12 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
+  }
+  onSaveQuote() {
+    for (let i = 0; i < this.quotes.length; i++) {
+      this.QuoteAPIService.saveQuote(this.quotes[i]);
+    }
     
   }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { QuoteAPIService } from '../quote-api.service';
 
 @Component({
   selector: 'app-quote-archive',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quote-archive.component.scss']
 })
 export class QuoteArchiveComponent implements OnInit {
+  savedQuotes = [];
   quotes = [
     {
       "author": 'Malcolm X',
@@ -25,7 +27,13 @@ export class QuoteArchiveComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private quoteAPIService: QuoteAPIService) {
+    this.savedQuotes = this.quoteAPIService.displayQuotes();
+    for (let i = 0; i < this.savedQuotes.length; i++) {
+      this.quotes.push(this.savedQuotes[i]);
+    }
+    
+   }
 
   ngOnInit(): void {
   }

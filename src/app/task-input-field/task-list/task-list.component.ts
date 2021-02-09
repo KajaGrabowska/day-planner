@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TasksService } from 'src/app/tasks.service';
 import { Task } from '../../task.model';
+import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-task-list',

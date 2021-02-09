@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -12,9 +14,11 @@ import { CompletedTasksComponent } from './completed-tasks/completed-tasks.compo
 import { QuoteArchiveComponent } from './quote-archive/quote-archive.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { AppRoutingModule } from './app-routing.module';
+
 import { HomeComponent } from './home/home.component';
-import { FormsModule } from '@angular/forms';
+
+import { TasksService } from './tasks.service';
+import { QuoteAPIService } from './quote-api.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [TasksService, QuoteAPIService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
