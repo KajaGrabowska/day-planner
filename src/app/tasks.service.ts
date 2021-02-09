@@ -10,7 +10,7 @@ import { Subject } from 'rxjs';
 export class TasksService {
   tasks: Task[] = [];
   tasksChanged = new Subject<Task[]>();
-  finishedTasks: Task[] = [];
+  //finishedTasks: Task[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -26,19 +26,20 @@ export class TasksService {
     this.tasks = tasks;
   }
 
-  completeTask(task: Task) {
-    for (let i = 0; i < this.tasks.length; i++) {
-      if (this.tasks[i].time === task.time) {
-        this.finishedTasks.push(task);
-      }   
-    }    
-  }
+  // completeTask(task: Task) {
+  //   for (let i = 0; i < this.tasks.length; i++) {
+  //     if (this.tasks[i].time === task.time) {
+  //       this.finishedTasks.push(task);
+  //     }   
+  //   }    
+  // }
 
-  getCompletedTasks() {
-    return this.finishedTasks;
-  }
+  // getCompletedTasks() {
+  //   return this.finishedTasks;
+  // }
 
   deleteTask(index: number) {
+    console.log(index);
     this.tasks.splice(index, 1);
     this.tasksChanged.next(this.tasks.slice());
   }

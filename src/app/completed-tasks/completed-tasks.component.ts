@@ -16,11 +16,11 @@ export class CompletedTasksComponent implements OnInit {
       
     }
     
-    displayCompletedTasks(task: Task) {
-      for (let i = 0; i < this.tasksService.finishedTasks.length; i++) {
-        task[i].push(this.completedTasks);
-      }
-  }
+  //   displayCompletedTasks(task: Task) {
+  //     for (let i = 0; i < this.tasksService.finishedTasks.length; i++) {
+  //       task[i].push(this.completedTasks);
+  //     }
+  // }
 
 
 

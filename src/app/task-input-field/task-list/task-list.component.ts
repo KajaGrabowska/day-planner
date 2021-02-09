@@ -18,15 +18,15 @@ export class TaskListComponent implements OnInit {
   constructor(private tasksService: TasksService ) { }
 
   ngOnInit() {
-    //this.tasks = this.tasksService.fetchTasks();
+    this.tasks = this.tasksService.getTasks();
   }
 
-  onCompleteTask(task: Task) {
-    this.tasksService.completeTask(task);
-  }
+  // onCompleteTask(task: Task) {
+  //   this.tasksService.completeTask(task);
+  // }
 
-  onDeleteTask() {
-    this.tasksService.deleteTask(this.index);
+  onDeleteTask(index: number) {
+    this.tasksService.deleteTask(index);
   }
 
 
