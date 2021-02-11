@@ -34,4 +34,5 @@ describe('HeaderComponent', () => {
     expect(compiled.querySelector('h1').textContent).toContain('Day Planner');
   }));
 
+
   });

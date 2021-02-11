@@ -18,7 +18,7 @@
                 <th scope="row">6AM</th>
                 <ng-container #index6AM *ngFor="let task of tasks; let i=index">
                     <ng-container *ngIf="tasks[i].time === '6AM'; else elseBlock">
-                        <td>{{ tasks[i].category }}</td>
+                        <td [ngStyle]="{'color': tasks[i].category === 'urgent' ? 'red' : 'black'}">{{ tasks[i].category }}</td>
                         <td>
                             <input 
                                 class="form-check-input" 
@@ -46,7 +46,7 @@
                 <th scope="row">7AM</th>
                 <ng-container #index7AM *ngFor="let task of tasks; let i=index">
                     <ng-container *ngIf="tasks[i].time === '7AM'; else elseBlock">
-                        <td>{{ tasks[i].category }}</td>
+                        <td [ngStyle]="{'color': tasks[i].category === 'urgent' ? 'red' : 'black'}">{{ tasks[i].category }}</td>
                         <td>
                             <input 
                                 class="form-check-input" 
@@ -59,11 +59,7 @@
                                 id="delete" 
                                 type="button" 
                                 class="btn btn-danger btn-sm"
-<<<<<<< HEAD
                                 (click)="onDeleteTask(i)"
-=======
-                                (click)="onDeleteTask(index7AM.value)"
->>>>>>> quote-feature
                                 >Delete
                             </button>
                         </td>
@@ -78,7 +74,7 @@
                 <th scope="row">8AM</th>
                 <ng-container *ngFor="let task of tasks; let i=index">
                     <ng-container *ngIf="tasks[i].time === '8AM'; else elseBlock">
-                        <td>{{ tasks[i].category }}</td>
+                        <td [ngStyle]="{'color': tasks[i].category === 'urgent' ? 'red' : 'black'}">{{ tasks[i].category }}</td>
                         <td>
                             <input 
                                 class="form-check-input" 
@@ -106,7 +102,7 @@
                 <th scope="row">9AM</th>
                 <ng-container *ngFor="let task of tasks; let i=index">
                     <ng-container *ngIf="tasks[i].time === '9AM'; else elseBlock">
-                        <td>{{ tasks[i].category }}</td>
+                        <td [ngStyle]="{'color': tasks[i].category === 'urgent' ? 'red' : 'black'}">{{ tasks[i].category }}</td>
                         <td>
                             <input 
                                 class="form-check-input" 
@@ -134,7 +130,7 @@
                 <th scope="row">10AM</th>
                 <ng-container *ngFor="let task of tasks; let i=index">
                     <ng-container *ngIf="tasks[i].time === '10AM'; else elseBlock">
-                        <td>{{ tasks[i].category }}</td>
+                        <td [ngStyle]="{'color': tasks[i].category === 'urgent' ? 'red' : 'black'}">{{ tasks[i].category }}</td>
                         <td>
                             <input 
                                 class="form-check-input" 
@@ -162,7 +158,7 @@
                 <th scope="row">11AM</th>
                 <ng-container *ngFor="let task of tasks; let i=index">
                     <ng-container *ngIf="tasks[i].time === '11AM'; else elseBlock">
-                        <td>{{ tasks[i].category }}</td>
+                        <td [ngStyle]="{'color': tasks[i].category === 'urgent' ? 'red' : 'black'}">{{ tasks[i].category }}</td>
                         <td>
                             <input 
                                 class="form-check-input" 
@@ -190,7 +186,7 @@
                 <th scope="row">12PM</th>
                 <ng-container *ngFor="let task of tasks; let i=index">
                     <ng-container *ngIf="tasks[i].time === '12PM'; else elseBlock">
-                        <td>{{ tasks[i].category }}</td>
+                        <td [ngStyle]="{'color': tasks[i].category === 'urgent' ? 'red' : 'black'}">{{ tasks[i].category }}</td>
                         <td>
                             <input 
                                 class="form-check-input" 
@@ -218,7 +214,7 @@
                 <th scope="row">1PM</th>
                 <ng-container *ngFor="let task of tasks; let i=index">
                     <ng-container *ngIf="tasks[i].time === '1PM'; else elseBlock">
-                        <td>{{ tasks[i].category }}</td>
+                        <td [ngStyle]="{'color': tasks[i].category === 'urgent' ? 'red' : 'black'}">{{ tasks[i].category }}</td>
                         <td>
                             <input 
                                 class="form-check-input" 
@@ -246,7 +242,7 @@
                 <th scope="row">2PM</th>
                 <ng-container *ngFor="let task of tasks; let i=index">
                     <ng-container *ngIf="tasks[i].time === '2PM'; else elseBlock">
-                        <td>{{ tasks[i].category }}</td>
+                        <td [ngStyle]="{'color': tasks[i].category === 'urgent' ? 'red' : 'black'}">{{ tasks[i].category }}</td>
                         <td>
                             <input 
                                 class="form-check-input" 
@@ -274,7 +270,7 @@
                 <th scope="row">3PM</th>
                 <ng-container *ngFor="let task of tasks; let i=index">
                     <ng-container *ngIf="tasks[i].time === '3PM'; else elseBlock">
-                        <td>{{ tasks[i].category }}</td>
+                        <td [ngStyle]="{'color': tasks[i].category === 'urgent' ? 'red' : 'black'}">{{ tasks[i].category }}</td>
                         <td>
                             <input 
                                 class="form-check-input" 
@@ -302,7 +298,7 @@
                 <th scope="row">4PM</th>
                 <ng-container *ngFor="let task of tasks; let i=index">
                     <ng-container *ngIf="tasks[i].time === '4PM'; else elseBlock">
-                        <td>{{ tasks[i].category }}</td>
+                        <td [ngStyle]="{'color': tasks[i].category === 'urgent' ? 'red' : 'black'}">{{ tasks[i].category }}</td>
                         <td>
                             <input 
                                 class="form-check-input" 
@@ -330,7 +326,7 @@
                 <th scope="row">5PM</th>
                 <ng-container *ngFor="let task of tasks; let i=index">
                     <ng-container *ngIf="tasks[i].time === '5PM'; else elseBlock">
-                        <td>{{ tasks[i].category }}</td>
+                        <td [ngStyle]="{'color': tasks[i].category === 'urgent' ? 'red' : 'black'}">{{ tasks[i].category }}</td>
                         <td>
                             <input 
                                 class="form-check-input" 
@@ -358,7 +354,7 @@
                 <th scope="row">6PM</th>
                 <ng-container *ngFor="let task of tasks; let i=index">
                     <ng-container *ngIf="tasks[i].time === '6PM'; else elseBlock">
-                        <td>{{ tasks[i].category }}</td>
+                        <td [ngStyle]="{'color': tasks[i].category === 'urgent' ? 'red' : 'black'}">{{ tasks[i].category }}</td>
                         <td>
                             <input 
                                 class="form-check-input" 
@@ -386,7 +382,7 @@
                 <th scope="row">7PM</th>
                 <ng-container *ngFor="let task of tasks; let i=index">
                     <ng-container *ngIf="tasks[i].time === '7PM'; else elseBlock">
-                        <td>{{ tasks[i].category }}</td>
+                        <td [ngStyle]="{'color': tasks[i].category === 'urgent' ? 'red' : 'black'}">{{ tasks[i].category }}</td>
                         <td>
                             <input 
                                 class="form-check-input" 
@@ -414,7 +410,7 @@
                 <th scope="row">8PM</th>
                 <ng-container *ngFor="let task of tasks; let i=index">
                     <ng-container *ngIf="tasks[i].time === '8PM'; else elseBlock">
-                        <td>{{ tasks[i].category }}</td>
+                        <td [ngStyle]="{'color': tasks[i].category === 'urgent' ? 'red' : 'black'}">{{ tasks[i].category }}</td>
                         <td>
                             <input 
                                 class="form-check-input" 
@@ -442,7 +438,7 @@
                 <th scope="row">9PM</th>
                 <ng-container *ngFor="let task of tasks; let i=index">
                     <ng-container *ngIf="tasks[i].time === '9PM'; else elseBlock">
-                        <td>{{ tasks[i].category }}</td>
+                        <td [ngStyle]="{'color': tasks[i].category === 'urgent' ? 'red' : 'black'}">{{ tasks[i].category }}</td>
                         <td>
                             <input 
                                 class="form-check-input" 
@@ -470,7 +466,7 @@
                 <th scope="row">10PM</th>
                 <ng-container *ngFor="let task of tasks; let i=index">
                     <ng-container *ngIf="tasks[i].time === '10PM'; else elseBlock">
-                        <td>{{ tasks[i].category }}</td>
+                        <td [ngStyle]="{'color': tasks[i].category === 'urgent' ? 'red' : 'black'}">{{ tasks[i].category }}</td>
                         <td>
                             <input 
                                 class="form-check-input" 

@@ -14,16 +14,16 @@ export class QuoteArchiveComponent implements OnInit {
       "content": "The future belongs to those who prepare for it today."
     },
     {
-      "author": 'Malcolm X',
-      "content": "The future belongs to those who prepare for it today."
+      "author": 'Buddha',
+      "content": "Thousands of candles can be lighted from a single candle, and the life of the candle will not be shortened. Happiness never decreases by being shared."
     },
     {
-      "author": 'Malcolm X',
-      "content": "The future belongs to those who prepare for it today."
+      "author": 'Eleanor Roosevelt',
+      "content": "With the new day comes new strength and new thoughts."
     },
     {
-      "author": 'Malcolm X',
-      "content": "The future belongs to those who prepare for it today."
+      "author": 'Albert Einstein',
+      "content": "A man should look for what is, and not for what he thinks should be."
     }
   ];
 

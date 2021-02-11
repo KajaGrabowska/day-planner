@@ -3,7 +3,7 @@
 <h1 id="title" class="text-center" style="font-size: 60pt;">Day Planner</h1>
 <br>
 <br>
-<div *ngFor="let quote of quotes; let index=i" #quote>
+<div *ngFor="let quote of quotes; let index=i">
     <p class="text-center" style="font-size: 16pt; font-style: italic;">"{{ quote.content }}"</p>
     <p class="text-center">- {{ quote.author }}</p>
 </div>
